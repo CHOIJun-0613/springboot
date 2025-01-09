@@ -1,0 +1,13 @@
+image: gitpod/workspace-full
+
+# Commands that will run on workspace start
+tasks:
+    - name: Setup, Install & Build
+      
+      init: |
+        sdk install java 23-open
+        sdk default java 23-open
+        sdk install gradle 8.12
+        sdk default gradle 8.12
+        
+      command: ./gradlew build
