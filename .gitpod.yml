@@ -9,5 +9,4 @@ tasks:
         sdk default java 23-open
         sdk install gradle 8.12
         sdk default gradle 8.12
-      
-      command: ./gradlew build       
+        
