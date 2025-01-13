@@ -10,4 +10,3 @@ tasks:
         sdk install gradle 8.12
         sdk default gradle 8.12
       
-      command: ./gradlew build       
