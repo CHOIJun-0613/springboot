@@ -3,6 +3,7 @@ package com.onyou.project01.product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -20,16 +21,16 @@ public class ProductController {
     private ProductService productService;
     // 상품 조회
     @RequestMapping(value = "/products/{id}", method = RequestMethod.GET)
-    public String findProduct(@PathVariable("id") int id){
+    public Product findProduct(@PathVariable("id") int id){
         System.out.println("id = " + id);
         return productService.findProduct(id);
     }
     //상품등록
     @RequestMapping(value = "/products", method=RequestMethod.POST)
-    public void saveProduct(@RequestParam(value = "name") String productName) {
+    public void saveProduct(@RequestBody Product product) {
         System.out.println("POST");
     
-        productService.saveProduct(productName);
+        productService.saveProduct(product);
     }
     
 
