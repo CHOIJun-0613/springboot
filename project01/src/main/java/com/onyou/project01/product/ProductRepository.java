@@ -1,11 +1,12 @@
 package com.onyou.project01.product;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
-import org.springframework.stereotype.Repository;
 
-@Repository
+
 public class ProductRepository {
     
     private Map<Integer, Product> db = new HashMap<>();
@@ -16,5 +17,8 @@ public class ProductRepository {
     public void save(Product product){
         System.out.println(product.getName());
         db.put(id++, product);
+    }
+    public List<Product> findProducts() {
+        return new ArrayList<Product>(db.values());
     }
 }
