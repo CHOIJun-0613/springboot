@@ -7,5 +7,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: springboot
+    volumes:
+      - /path/to/data:/var/lib/mysql
     ports:
       - "3306:3306"
