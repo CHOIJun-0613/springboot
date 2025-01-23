@@ -2,12 +2,21 @@ image:
   file: .gitpod.Dockerfile
 
 tasks:
-  - name: MySQL docker # docker-compose up -d
+  - name: MySQL Server 
+    init: |
+      docker pull mysql:8.0
     command: | 
       docker compose up -d
       docker ps
-    openMode: tab-after
-
+    openMode: split-left
+  - name: MySQL Client 
+    command: |
+      mysql --version
+    openMode: split-right
+  - name: My Work 
+    command: |
+      date
+    openMode: tab-after  
 ports:
   - port: 3306
     visibility: public
