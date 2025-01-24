@@ -3,11 +3,17 @@ version: '3.9'
 services:
   db:
     image: mysql:8.0
-    container_name: mysql
+    container_name: mysql-container
+    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: springboot
+      MYSQL_USER: springboot
+      MYSQL_PASSWORD: springboot
     volumes:
-      - /path/to/data:/var/lib/mysql
+      - mysql_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - "3306:3306"
+volumes:
+    mysql_data:
