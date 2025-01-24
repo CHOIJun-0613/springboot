@@ -6,7 +6,8 @@ tasks:
     init: |
       docker pull mysql:8.0
     command: | 
-      docker compose up -d
+      docker-compase down -v
+      docker-compose up -d
       docker ps
     openMode: split-left
   - name: MySQL Client 
