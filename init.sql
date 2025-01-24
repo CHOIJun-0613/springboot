@@ -11,6 +11,6 @@ CREATE TABLE IF NOT EXISTS sample_table (
     name VARCHAR(255)
 ) COMMENT 'Sample';
 
-INSERT sample(name) VALUES('initdata');
+INSERT sample_table(name) VALUES('initdata');
 
 
