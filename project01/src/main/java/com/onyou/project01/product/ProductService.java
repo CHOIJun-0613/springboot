@@ -12,6 +12,10 @@ public class ProductService {
     ProductService(ProductRepository productRepository){
         this.productRepository = productRepository;
     }
+
+    public void makeConnection(){
+        productRepository.makeConnection();
+    }
     public Product findProduct(int id){
         //return "NoteBook-P";
         return  productRepository.findProduct(id);
