@@ -5,16 +5,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.sql.DataSource;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.datasource.DataSourceUtils;
 
 public class ProductRepository {
     
     @Autowired
-    DataSource dataSource;
-
+    EntityManager entityManager;
+    //DataSource dataSource;
+ 
     private Map<Integer, Product> db = new HashMap<>();
     private int id = 1;
 
