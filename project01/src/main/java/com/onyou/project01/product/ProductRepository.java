@@ -5,12 +5,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.jdbc.datasource.DataSourceUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import jakarta.persistence.EntityManager;
 
 public class ProductRepository {
     
     @Autowired
     EntityManager entityManager;
+    
     //DataSource dataSource;
  
     private Map<Integer, Product> db = new HashMap<>();
@@ -18,7 +21,7 @@ public class ProductRepository {
 
     // dataSource로 접속 테스트
     public void makeConnection(){
-        DataSourceUtils.getConnection(dataSource);
+        //DataSourceUtils.getConnection(dataSource);
     }
     public Product findProduct(int idx){
         return db.get(idx);
