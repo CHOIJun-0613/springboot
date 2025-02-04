@@ -31,6 +31,9 @@ public class ProductRepository {
         db.put(id++, product);
     }
     public List<Product> findProducts() {
-        return new ArrayList<Product>(db.values());
+        //return new ArrayList<Product>(db.values());
+        return entityManager
+            .createQuery("SELECT p FROM Product p", Product.class)
+            .getResultList();
     }
 }
