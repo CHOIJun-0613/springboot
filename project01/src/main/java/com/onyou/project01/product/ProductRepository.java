@@ -28,7 +28,8 @@ public class ProductRepository {
     }
     public void save(Product product){
         System.out.println(product.getName());
-        db.put(id++, product);
+        //db.put(id++, product);
+        entityManager.persist(product);
     }
     public List<Product> findProducts() {
         //return new ArrayList<Product>(db.values());
