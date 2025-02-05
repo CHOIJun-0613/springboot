@@ -1,9 +1,12 @@
 package com.onyou.project01.product;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @Entity
 public class Product {
+    // EntityContext 안에서 identifiew(식별자 = DB의 PK)를 가지고 Entity를 구별
+    @Id
     private int id;
     private String name;
     private int price;
