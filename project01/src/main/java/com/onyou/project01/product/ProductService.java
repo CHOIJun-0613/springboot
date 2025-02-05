@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import jakarta.transaction.Transactional;
+
 @Service
 public class ProductService {
     private ProductRepository productRepository;
@@ -21,7 +23,7 @@ public class ProductService {
         return  productRepository.findProduct(id);
 
     }
-
+    @Transactional
     public void saveProduct(Product product){
         productRepository.save(product);
     }
