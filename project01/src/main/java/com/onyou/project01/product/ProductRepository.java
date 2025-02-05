@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import jakarta.persistence.EntityManager;
 
-public class ProductRepository {
+public class ProductRepository  {
     
     @Autowired
     EntityManager entityManager;
