@@ -9,26 +9,30 @@ import jakarta.transaction.Transactional;
 
 @Service
 public class ProductService {
-    private ProductRepository productRepository;
+    // private ProductRepository productRepository;
+    // @Autowired
+    // ProductService(ProductRepository productRepository){
+    //     this.productRepository = productRepository;
+    // }
     @Autowired
-    ProductService(ProductRepository productRepository){
-        this.productRepository = productRepository;
-    }
-
+    private SpringDataJPAProductRepository springDataJPAProductRepository;
     public void makeConnection(){
-        productRepository.makeConnection();
+        //productRepository.makeConnection();
     }
     public Product findProduct(int id){
         //return "NoteBook-P";
-        return  productRepository.findProduct(id);
+        //return  productRepository.findProduct(id);
+        return springDataJPAProductRepository.findById(id).get();
 
     }
     @Transactional
     public void saveProduct(Product product){
-        productRepository.save(product);
+        //productRepository.save(product);
+        springDataJPAProductRepository.save(product);
     }
     public List<Product> findProducts() {
-        return productRepository.findProducts();
+        //return productRepository.findProducts();
+        return springDataJPAProductRepository.findAll();
     }
     
 }

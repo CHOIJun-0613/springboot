@@ -7,9 +7,9 @@ import com.onyou.project01.product.ProductRepository;
 
 @Configuration
 public class AppConfig {
-    @Bean
-    public ProductRepository productRepository(){
-        return new ProductRepository();
-    }
+    // @Bean
+    // public ProductRepository productRepository() {
+    //     return new ProductRepository();
+    // }
 
 }
