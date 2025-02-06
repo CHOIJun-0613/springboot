@@ -5,7 +5,7 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Product {
-    // EntityContext 안에서 identifiew(식별자 = DB의 PK)를 가지고 Entity를 구별
+    // EntityContext 안에서 identifier(식별자 = DB의 PK)를 가지고 Entity를 구별
     @Id
     private int id;
     private String name;
