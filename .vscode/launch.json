@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Project02Application",
+            "request": "launch",
+            "mainClass": "com.onyou.project02.Project02Application",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "Project01Application",
             "request": "launch",
             "mainClass": "com.onyou.project01.Project01Application",
