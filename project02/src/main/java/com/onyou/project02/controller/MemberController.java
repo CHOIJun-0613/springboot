@@ -62,6 +62,20 @@ public class MemberController {
         // 3. 뷰 페이지 설정하기
         return "members/index";
     }
+    @PostMapping("/members/update")
+    public String update(MemberForm memberForm) {
+        log.info(memberForm.toString());
+        Member member = memberForm.toEntity();
+        log.info(member.toString());
+
+        Member target =  memberRepository.findById(member.getId()).orElse(null);
+        if(target != null){
+            memberRepository.save(member);
+            log.info("update : " + member.getId());
+        }
+
+        return "redirect:/members/" + member.getId();
+    }
     
     
     
