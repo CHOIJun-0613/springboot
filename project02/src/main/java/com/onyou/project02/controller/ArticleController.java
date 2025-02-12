@@ -31,8 +31,6 @@ public class ArticleController {
 
     @PostMapping("/articles/create")
     public String createArticle(ArticleForm form) {
-        
-
         // 1. DTO를 엔티티로 변환
         Article article = form.toEntity();
         //System.out.println(article.toString());
@@ -41,7 +39,7 @@ public class ArticleController {
         Article savedArticle = articleRepository.save(article);
         //System.out.println(savedArticle.toString());
         log.info(savedArticle.toString());
-        return "";
+        return "redirect:/articles/" + savedArticle.getId();
     }
     
     @GetMapping("/articles/{id}")
