@@ -15,6 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -62,6 +63,16 @@ public class MemberController {
         // 3. 뷰 페이지 설정하기
         return "members/index";
     }
+    @GetMapping("/members/{id}/edit")
+    public String edit(@PathVariable Long id, Model model) {
+        // 1. 수정할 데이터 가져오기
+        Member memberEntity = memberRepository.findById(id).orElse(null);
+        // 2. 모델에 데이터 전달하기
+        model.addAttribute("member", memberEntity);
+        // 3. 뷰 페이지 설정하기
+        return "members/edit";
+    }
+    
     @PostMapping("/members/update")
     public String update(MemberForm memberForm) {
         log.info(memberForm.toString());
@@ -76,6 +87,23 @@ public class MemberController {
 
         return "redirect:/members/" + member.getId();
     }
+
+    @GetMapping("/members/{id}/delete")
+    public String delete(@PathVariable Long id, RedirectAttributes rttr) {
+        log.info("delete member id : " + id);
+        // 1. 삭제할 대상 가져오기
+        Member target = memberRepository.findById(id).orElse(null);
+
+        // 2. 대상 엔티티 삭제하기
+        if(target != null){
+            memberRepository.delete(target);
+            log.info("id = " +id + " 번 사용자 삭제 완료");
+            rttr.addFlashAttribute("msg", id + "번 사용자가 삭제되었습니다.");
+        }
+        // 3. 결과 페이지로 리다이렉트하기
+        return "redirect:/members";
+    }
+    
     
     
     
