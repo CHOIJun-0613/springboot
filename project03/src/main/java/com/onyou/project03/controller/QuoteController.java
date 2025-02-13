@@ -1,4 +1,4 @@
-package com.onyou.project02.controller;
+package com.onyou.project03.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

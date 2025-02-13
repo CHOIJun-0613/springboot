@@ -1,4 +1,4 @@
-package com.onyou.project02.entity;
+package com.onyou.project03.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

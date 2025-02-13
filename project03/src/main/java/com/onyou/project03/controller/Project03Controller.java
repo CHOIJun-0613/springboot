@@ -1,4 +1,4 @@
-package com.onyou.project02.controller;
+package com.onyou.project03.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
-public class Project02Controller {
+public class Project03Controller {
     @GetMapping("/hi")
     public String niceToMeetYou(Model model){
         model.addAttribute("username", "hongpark");

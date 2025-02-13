@@ -1,4 +1,4 @@
-package com.onyou.project02.controller;
+package com.onyou.project03.controller;
 
 import java.util.ArrayList;
 
@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 
-import com.onyou.project02.dto.MemberForm;
-import com.onyou.project02.entity.Member;
-import com.onyou.project02.repository.MemberRepository;
+import com.onyou.project03.dto.MemberForm;
+import com.onyou.project03.entity.Member;
+import com.onyou.project03.repository.MemberRepository;
 
 import lombok.extern.slf4j.Slf4j;
 

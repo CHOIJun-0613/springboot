@@ -1,4 +1,4 @@
-package com.onyou.project02.controller;
+package com.onyou.project03.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.onyou.project02.dto.ArticleForm;
-import com.onyou.project02.entity.Article;
-import com.onyou.project02.repository.ArticleRepository;
+import com.onyou.project03.dto.ArticleForm;
+import com.onyou.project03.entity.Article;
+import com.onyou.project03.repository.ArticleRepository;
 
 import org.springframework.ui.Model;
 import lombok.extern.slf4j.Slf4j;

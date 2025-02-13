@@ -1,6 +1,6 @@
-package com.onyou.project02.dto;
+package com.onyou.project03.dto;
 
-import com.onyou.project02.entity.Article;
+import com.onyou.project03.entity.Article;
 
 import lombok.AllArgsConstructor;
 import lombok.ToString;

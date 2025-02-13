@@ -1,10 +1,10 @@
-package com.onyou.project02.repository;
+package com.onyou.project03.repository;
 
 import java.util.ArrayList;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.onyou.project02.entity.Member;
+import com.onyou.project03.entity.Member;
 
 public interface MemberRepository extends CrudRepository<Member, Long>{
     @Override
