@@ -43,13 +43,14 @@ public class CoffeeApiController {
     
     // POST
     @PostMapping("/api/coffees")
-    public ResponseEntity<Coffee> create(CoffeeDto dto) {
+    public ResponseEntity<Coffee> create(@RequestBody CoffeeDto dto) {
         Coffee coffee = dto.toEntity();
+        log.info("create coffee:{}", coffee.toString());
         if(coffee.getId() != null){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
         }
         Coffee created = coffeeRepository.save(coffee);
-
+        log.info("created coffee:{}", created.toString());
         return ResponseEntity.status(HttpStatus.CREATED).body(created);
     }
 

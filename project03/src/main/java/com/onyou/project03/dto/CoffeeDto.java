@@ -11,7 +11,7 @@ import lombok.ToString;
 public class CoffeeDto {
     private Long id;
     private String name;
-    private int price;
+    private String price;
     public Coffee toEntity() {
         return new Coffee(id, name, price);
     }
