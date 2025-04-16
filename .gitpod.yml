@@ -22,7 +22,3 @@ ports:
   - port: 3306
     visibility: public
     onOpen: ignore
-
-vscode:
-  extensions:
-    - cursor.cursor-vscode # Cursor 확장 프로그램 ID
